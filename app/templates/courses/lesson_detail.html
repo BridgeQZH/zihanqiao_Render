@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block title %}{{ lesson.title }} | {{ config.APP_NAME }}{% endblock %}
+
+{% block content %}
+<section class="learning-layout">
+    <div class="learning-main">
+        <section class="section lesson-hero">
+            <div class="breadcrumbs">
+                <a href="{{ url_for('courses.index') }}">Courses</a>
+                <span>/</span>
+                <a href="{{ url_for('courses.course_detail', course_slug=course.slug) }}">{{ course.title }}</a>
+                <span>/</span>
+                <span>{{ lesson.title }}</span>
+            </div>
+
+            <p class="eyebrow">{{ module.title }}</p>
+            <h1>{{ lesson.title }}</h1>
+            <p class="section-text lead-text">{{ lesson.summary }}</p>
+        </section>
+
+        <section class="section lesson-body-card">
+            <div class="rich-copy">
+                {% for paragraph in lesson.body.split('\n\n') %}
+                <p>{{ paragraph }}</p>
+                {% endfor %}
+            </div>
+        </section>
+    </div>
+
+    <aside class="learning-sidebar">
+        <section class="sidebar-card">
+            <p class="eyebrow">Progress</p>
+            <h2>Sync placeholder</h2>
+            <p class="section-text">
+                Lesson completion, resume points, and cross-device progress will live here after sign-in is added.
+            </p>
+            <div class="progress-placeholder">
+                <div class="progress-bar">
+                    <span style="width: 0%;"></span>
+                </div>
+                <p>Not tracking yet</p>
+            </div>
+        </section>
+
+        <section class="sidebar-card sidebar-muted">
+            <p class="eyebrow">Up Next</p>
+            {% if next_lesson %}
+            <h2>{{ next_lesson.title }}</h2>
+            <p class="section-text">{{ next_lesson.summary }}</p>
+            <a class="button" href="{{ url_for('courses.lesson_detail', lesson_slug=next_lesson.slug) }}">Continue</a>
+            {% else %}
+            <h2>Module complete</h2>
+            <p class="section-text">You have reached the last published lesson in this module.</p>
+            <a class="button button-secondary" href="{{ url_for('courses.course_detail', course_slug=course.slug) }}">Back to Course</a>
+            {% endif %}
+        </section>
+    </aside>
+</section>
+{% endblock %}

@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block title %}{{ config.APP_NAME }} | Learn Bridge With Confidence{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div class="hero-copy">
+        <p class="eyebrow">Bridge Learning Platform</p>
+        <h1>Learn the strategy, rhythm, and partnership skills behind great bridge.</h1>
+        <p class="hero-text">
+            A clean foundation for lessons, guided practice, and future member features.
+            Start with beginner-friendly material and grow into confident competitive play.
+        </p>
+        <div class="hero-actions">
+            <a class="button" href="{{ url_for('courses.index') }}">Explore Courses</a>
+            <a class="button button-secondary" href="{{ url_for('main.health') }}">Check Health</a>
+        </div>
+    </div>
+
+    <aside class="hero-panel">
+        <div class="panel-card">
+            <p class="panel-label">What learners need</p>
+            <ul class="check-list">
+                <li>Simple progression from basics to tactics</li>
+                <li>Partner-focused bidding explanations</li>
+                <li>Practice pathways that can scale later</li>
+            </ul>
+        </div>
+    </aside>
+</section>
+
+<section class="section">
+    <div class="section-heading">
+        <p class="eyebrow">Featured Tracks</p>
+        <h2>Designed for steady, practical improvement.</h2>
+    </div>
+
+    <div class="card-grid">
+        {% for course in featured_courses %}
+        <article class="card">
+            <span class="tag">{{ course.level }}</span>
+            <h3>{{ course.title }}</h3>
+            <p>{{ course.description }}</p>
+        </article>
+        {% endfor %}
+    </div>
+</section>
+
+<section class="section section-accent">
+    <div class="stats-grid">
+        <article class="stat">
+            <strong>Factory Pattern</strong>
+            <p>Ready for multiple environments and future extensions.</p>
+        </article>
+        <article class="stat">
+            <strong>Blueprints</strong>
+            <p>Organized for content growth without crowding the app entrypoint.</p>
+        </article>
+        <article class="stat">
+            <strong>Modern UI</strong>
+            <p>Templates and CSS are in place for a polished first release.</p>
+        </article>
+    </div>
+</section>
+{% endblock %}

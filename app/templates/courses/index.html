@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}Courses | {{ config.APP_NAME }}{% endblock %}
+
+{% block content %}
+<section class="section course-list-hero">
+    <div class="section-heading">
+        <p class="eyebrow">Course Library</p>
+        <h1>Public bridge bidding lessons with room to grow into a full learning platform.</h1>
+        <p class="section-text">
+            Start with the foundation course below. Each page is server-rendered, structured
+            for incremental growth, and ready for future premium access controls.
+        </p>
+    </div>
+
+    <div class="course-list-grid">
+        {% for course in courses %}
+        <article class="course-card">
+            <p class="eyebrow">Bridge Series</p>
+            <h2>{{ course.title }}</h2>
+            <p class="course-card-summary">{{ course.summary }}</p>
+
+            <div class="meta-row">
+                <span>{{ course.published_modules|length }} module{% if course.published_modules|length != 1 %}s{% endif %}</span>
+                <span>{{ course.published_lesson_count }} lesson{% if course.published_lesson_count != 1 %}s{% endif %}</span>
+            </div>
+
+            <p class="section-text">{{ course.description }}</p>
+            <a class="button" href="{{ url_for('courses.course_detail', course_slug=course.slug) }}">View Course</a>
+        </article>
+        {% else %}
+        <article class="course-card">
+            <h2>No published courses yet</h2>
+            <p class="section-text">
+                Run the seed command to load the sample bridge bidding curriculum.
+            </p>
+        </article>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}
