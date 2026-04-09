@@ -6,14 +6,14 @@
 <section class="learning-layout">
     <div class="learning-main">
         <section class="section lesson-hero">
-            <p class="eyebrow">Course</p>
+            <p class="eyebrow">课程</p>
             <h1>{{ course.title }}</h1>
             <p class="section-text lead-text">{{ course.summary }}</p>
             <p class="section-text">{{ course.description }}</p>
 
             <div class="meta-row">
-                <span>{{ course.published_modules|length }} module{% if course.published_modules|length != 1 %}s{% endif %}</span>
-                <span>{{ course.published_lesson_count }} published lesson{% if course.published_lesson_count != 1 %}s{% endif %}</span>
+                <span>{{ course.published_modules|length }} 个模块</span>
+                <span>{{ course.published_lesson_count }} 节已发布课程</span>
             </div>
         </section>
 
@@ -21,7 +21,7 @@
         <section class="section module-section">
             <div class="module-heading">
                 <div>
-                    <p class="eyebrow">Module {{ loop.index }}</p>
+                    <p class="eyebrow">模块 {{ loop.index }}</p>
                     <h2>{{ module.title }}</h2>
                     <p class="section-text">{{ module.summary }}</p>
                 </div>
@@ -37,7 +37,7 @@
                         </h3>
                         <p>{{ lesson.summary }}</p>
                     </div>
-                    <a class="text-link" href="{{ url_for('courses.lesson_detail', lesson_slug=lesson.slug) }}">Open Lesson</a>
+                    <a class="text-link" href="{{ url_for('courses.lesson_detail', lesson_slug=lesson.slug) }}">开始学习</a>
                 </article>
                 {% endfor %}
             </div>
@@ -47,27 +47,27 @@
 
     <aside class="learning-sidebar">
         <section class="sidebar-card">
-            <p class="eyebrow">Progress</p>
-            <h2>Tracking arrives next</h2>
+            <p class="eyebrow">学习进度</p>
+            <h2>这里先放占位模块</h2>
             <p class="section-text">
-                Progress sync, device continuity, and premium access checks will connect here once
-                authentication is added.
+                之后接入登录后，这里可以显示课程完成度、跨设备同步状态、
+                免费课与订阅课权限等信息。
             </p>
 
             <div class="progress-placeholder">
                 <div class="progress-bar">
                     <span style="width: 0%;"></span>
                 </div>
-                <p>0 of {{ course.published_lesson_count }} lessons completed</p>
+                <p>已完成 0 / {{ course.published_lesson_count }} 节</p>
             </div>
         </section>
 
         <section class="sidebar-card sidebar-muted">
-            <p class="eyebrow">Learning Focus</p>
+            <p class="eyebrow">本模块重点</p>
             <ul class="check-list">
-                <li>Balanced hand recognition</li>
-                <li>Responder structure after 1NT</li>
-                <li>Invitational versus game-going decisions</li>
+                <li>理解 1NT 开叫所代表的牌型与点力范围</li>
+                <li>熟悉应叫人后续表达的基本路线</li>
+                <li>分清停叫、邀请叫与进局叫的判断</li>
             </ul>
         </section>
     </aside>

@@ -1,23 +1,20 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block title %}{{ config.APP_NAME }}{% endblock %}</title>
-    <meta name="description" content="A modern bridge learning platform built with Flask.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <meta name="description" content="一个专注于桥牌叫牌学习的现代化教学网站。">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
     <div class="page-shell">
         <header class="site-header">
             <a class="brand" href="{{ url_for('main.home') }}">{{ config.APP_NAME }}</a>
-            <nav class="site-nav" aria-label="Primary">
-                <a href="{{ url_for('main.home') }}">Home</a>
-                <a href="{{ url_for('courses.index') }}">Courses</a>
-                <a href="{{ url_for('auth.index') }}">Members</a>
+            <nav class="site-nav" aria-label="主导航">
+                <a href="{{ url_for('main.home') }}">首页</a>
+                <a href="{{ url_for('courses.index') }}">课程</a>
+                <a href="{{ url_for('auth.index') }}">会员</a>
             </nav>
         </header>
 
@@ -26,7 +23,7 @@
         </main>
 
         <footer class="site-footer">
-            <p>Built for focused bridge practice, clear teaching, and future course growth.</p>
+            <p>为桥牌学习而建，适合持续打磨课程、练习与未来订阅功能。</p>
         </footer>
     </div>
 </body>

@@ -1,15 +1,15 @@
 {% extends "base.html" %}
 
-{% block title %}Members | {{ config.APP_NAME }}{% endblock %}
+{% block title %}会员中心 | {{ config.APP_NAME }}{% endblock %}
 
 {% block content %}
 <section class="section compact-section">
     <div class="section-heading">
-        <p class="eyebrow">Members</p>
-        <h1>Authentication is intentionally not built yet.</h1>
+        <p class="eyebrow">会员功能</p>
+        <h1>登录、注册与邮箱验证将在下一阶段接入。</h1>
         <p class="section-text">
-            The blueprint is in place so login, signup, and account management can be
-            added later without restructuring the project.
+            目前这里只保留会员模块入口，后续可以直接加入注册、登录、邮箱验证、
+            学习进度同步和 Stripe 订阅，不需要重构整个网站结构。
         </p>
     </div>
 </section>

@@ -7,7 +7,7 @@
     <div class="learning-main">
         <section class="section lesson-hero">
             <div class="breadcrumbs">
-                <a href="{{ url_for('courses.index') }}">Courses</a>
+                <a href="{{ url_for('courses.index') }}">课程</a>
                 <span>/</span>
                 <a href="{{ url_for('courses.course_detail', course_slug=course.slug) }}">{{ course.title }}</a>
                 <span>/</span>
@@ -30,29 +30,30 @@
 
     <aside class="learning-sidebar">
         <section class="sidebar-card">
-            <p class="eyebrow">Progress</p>
-            <h2>Sync placeholder</h2>
+            <p class="eyebrow">学习进度</p>
+            <h2>同步功能占位</h2>
             <p class="section-text">
-                Lesson completion, resume points, and cross-device progress will live here after sign-in is added.
+                登录功能接入后，这里可以显示课时完成状态、继续学习位置、
+                以及手机与电脑之间的同步进度。
             </p>
             <div class="progress-placeholder">
                 <div class="progress-bar">
                     <span style="width: 0%;"></span>
                 </div>
-                <p>Not tracking yet</p>
+                <p>当前还未开始记录</p>
             </div>
         </section>
 
         <section class="sidebar-card sidebar-muted">
-            <p class="eyebrow">Up Next</p>
+            <p class="eyebrow">下一节</p>
             {% if next_lesson %}
             <h2>{{ next_lesson.title }}</h2>
             <p class="section-text">{{ next_lesson.summary }}</p>
-            <a class="button" href="{{ url_for('courses.lesson_detail', lesson_slug=next_lesson.slug) }}">Continue</a>
+            <a class="button" href="{{ url_for('courses.lesson_detail', lesson_slug=next_lesson.slug) }}">继续学习</a>
             {% else %}
-            <h2>Module complete</h2>
-            <p class="section-text">You have reached the last published lesson in this module.</p>
-            <a class="button button-secondary" href="{{ url_for('courses.course_detail', course_slug=course.slug) }}">Back to Course</a>
+            <h2>本模块已学完</h2>
+            <p class="section-text">你已经看到这个模块里当前已发布的最后一节课。</p>
+            <a class="button button-secondary" href="{{ url_for('courses.course_detail', course_slug=course.slug) }}">返回课程</a>
             {% endif %}
         </section>
     </aside>

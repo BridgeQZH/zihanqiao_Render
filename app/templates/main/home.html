@@ -1,29 +1,29 @@
 {% extends "base.html" %}
 
-{% block title %}{{ config.APP_NAME }} | Learn Bridge With Confidence{% endblock %}
+{% block title %}{{ config.APP_NAME }} | 中文桥牌叫牌学习网站{% endblock %}
 
 {% block content %}
 <section class="hero">
     <div class="hero-copy">
-        <p class="eyebrow">Bridge Learning Platform</p>
-        <h1>Learn the strategy, rhythm, and partnership skills behind great bridge.</h1>
+        <p class="eyebrow">桥牌叫牌学习平台</p>
+        <h1>用更清晰的中文内容，系统学习桥牌叫牌与搭档配合。</h1>
         <p class="hero-text">
-            A clean foundation for lessons, guided practice, and future member features.
-            Start with beginner-friendly material and grow into confident competitive play.
+            这是第一轮中文化版本，先把公开课程、章节结构和学习页面搭好。
+            你可以在这个基础上继续细化每一课的桥牌内容、练习题与订阅功能。
         </p>
         <div class="hero-actions">
-            <a class="button" href="{{ url_for('courses.index') }}">Explore Courses</a>
-            <a class="button button-secondary" href="{{ url_for('main.health') }}">Check Health</a>
+            <a class="button" href="{{ url_for('courses.index') }}">查看课程</a>
+            <a class="button button-secondary" href="{{ url_for('main.health') }}">健康检查</a>
         </div>
     </div>
 
     <aside class="hero-panel">
         <div class="panel-card">
-            <p class="panel-label">What learners need</p>
+            <p class="panel-label">当前适合做什么</p>
             <ul class="check-list">
-                <li>Simple progression from basics to tactics</li>
-                <li>Partner-focused bidding explanations</li>
-                <li>Practice pathways that can scale later</li>
+                <li>先发布公开课，验证用户是否愿意持续学习</li>
+                <li>重点讲清楚叫牌含义，而不是堆太多术语</li>
+                <li>后续再逐步加入进度、登录与订阅体系</li>
             </ul>
         </div>
     </aside>
@@ -31,8 +31,8 @@
 
 <section class="section">
     <div class="section-heading">
-        <p class="eyebrow">Featured Tracks</p>
-        <h2>Designed for steady, practical improvement.</h2>
+        <p class="eyebrow">重点学习方向</p>
+        <h2>先从能真正帮助初学者进步的桥牌表达开始。</h2>
     </div>
 
     <div class="card-grid">
@@ -49,16 +49,16 @@
 <section class="section section-accent">
     <div class="stats-grid">
         <article class="stat">
-            <strong>Factory Pattern</strong>
-            <p>Ready for multiple environments and future extensions.</p>
+            <strong>结构清晰</strong>
+            <p>当前项目已使用工厂模式与蓝图，后续继续扩展不会乱。</p>
         </article>
         <article class="stat">
-            <strong>Blueprints</strong>
-            <p>Organized for content growth without crowding the app entrypoint.</p>
+            <strong>课程优先</strong>
+            <p>先把课程、模块、课时内容跑通，再逐步接入账号与订阅。</p>
         </article>
         <article class="stat">
-            <strong>Modern UI</strong>
-            <p>Templates and CSS are in place for a polished first release.</p>
+            <strong>移动端友好</strong>
+            <p>页面已针对手机阅读做第一轮优化，适合后续继续打磨。</p>
         </article>
     </div>
 </section>

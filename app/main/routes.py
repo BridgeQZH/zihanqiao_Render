@@ -7,19 +7,19 @@ from app.main import bp
 def home():
     featured_courses = [
         {
-            "title": "Bridge Basics",
-            "level": "Beginner",
-            "description": "Build confidence with the rules, flow of play, and table etiquette.",
+            "title": "桥牌入门基础",
+            "level": "初学者",
+            "description": "从牌局流程、桌上礼仪到基本思路，先把入门框架搭起来。",
         },
         {
-            "title": "Bidding Fundamentals",
-            "level": "Intermediate",
-            "description": "Understand common bidding ideas and communicate clearly with your partner.",
+            "title": "叫牌核心概念",
+            "level": "进阶",
+            "description": "理解常见叫牌表达，学会和搭档稳定传递牌力与牌型信息。",
         },
         {
-            "title": "Declarer Play",
-            "level": "Intermediate",
-            "description": "Practice planning a hand, managing trumps, and creating extra winners.",
+            "title": "定约打法训练",
+            "level": "进阶",
+            "description": "练习做庄计划、将牌管理和建立额外赢墩的基本方法。",
         },
     ]
 

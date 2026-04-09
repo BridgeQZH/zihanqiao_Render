@@ -21,13 +21,14 @@
 
 html {
     scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
 }
 
 body {
     margin: 0;
     min-height: 100vh;
     color: var(--text);
-    font-family: "Manrope", sans-serif;
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", "Source Han Sans SC", sans-serif;
     background:
         radial-gradient(circle at top left, rgba(31, 122, 92, 0.18), transparent 28%),
         radial-gradient(circle at right 20%, rgba(214, 137, 16, 0.12), transparent 22%),
@@ -62,9 +63,9 @@ a {
 }
 
 .brand {
-    font-size: 1rem;
+    font-size: 1.02rem;
     font-weight: 800;
-    letter-spacing: 0.03em;
+    letter-spacing: 0.01em;
 }
 
 .site-nav {
@@ -114,8 +115,9 @@ a {
 }
 
 .hero h1 {
-    max-width: 12ch;
-    font-size: clamp(2.8rem, 6vw, 5.3rem);
+    max-width: 11ch;
+    font-size: clamp(2.35rem, 6vw, 4.7rem);
+    line-height: 1.14;
 }
 
 .eyebrow {
@@ -123,8 +125,7 @@ a {
     color: var(--accent-dark);
     font-size: 0.8rem;
     font-weight: 800;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
+    letter-spacing: 0.08em;
 }
 
 .hero-text,
@@ -324,8 +325,7 @@ a {
     color: var(--accent-dark);
     font-size: 0.86rem;
     font-weight: 800;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
+    letter-spacing: 0.02em;
 }
 
 .learning-layout {
@@ -501,6 +501,7 @@ a {
 @media (max-width: 640px) {
     .page-shell {
         width: min(calc(100% - 1rem), var(--content-width));
+        padding-top: 0.75rem;
     }
 
     .hero-copy,
@@ -508,5 +509,55 @@ a {
     .site-footer {
         padding-left: 1.25rem;
         padding-right: 1.25rem;
+    }
+
+    .site-header {
+        padding: 0.95rem 1rem;
+        border-radius: 24px;
+    }
+
+    .site-nav {
+        width: 100%;
+        justify-content: space-between;
+        font-size: 0.95rem;
+    }
+
+    .hero-copy {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    .hero-text,
+    .section-text,
+    .lesson-row-content p,
+    .course-card-summary,
+    .rich-copy p {
+        font-size: 1rem;
+        line-height: 1.8;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+    }
+
+    .button,
+    .button-secondary {
+        width: 100%;
+    }
+
+    .course-card,
+    .sidebar-card,
+    .lesson-row {
+        padding: 1.2rem;
+    }
+
+    .lesson-row-index {
+        width: 46px;
+        height: 46px;
+        border-radius: 14px;
+    }
+
+    .breadcrumbs {
+        font-size: 0.88rem;
     }
 }
